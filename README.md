@@ -42,20 +42,20 @@ The bucket was divided into 2 folders:
   - artist_data
 
 The raw_data folder contains 2 folders inside, to_process and processed. 
-The to_process contains the raw extracted data that was not processed yet. The processed contain the raw extracted data that was already processed.
+The to_process contains the raw extracted data that was not processed yet. The process contains the raw extracted data that was already processed.
 
-Inside the transformed_data folder we have 3 folders, representing the 3 intances we are pulling data too.
+Inside the transformed_data folder, we have 3 folders, representing the 3 instances we are pulling data to.
 
+2- Create the request extract the data from the Spotify API, and store it in a raw format on the to_process folder. 
 
-2- Create the request and extract the data from the Spotify API, and store it in a raw format on the to_process folder. 
-3- Create the transfomation and load function to clean, structure and retrive only the data we wanted to for further analysis.
-The treated and transformed data will be stored on the transformed_data folder under it's respective instance.
-After this the data will be moved to the processed folder being deleted from the to_process, so that it wont get processed again.
+3- Create the transformation and load function to clean, structure, and retrieve only the data we wanted for further analysis.
+The treated and transformed data will be stored in the transformed_data folder under its respective instance.
+After this, the data will be moved to the processed folder being deleted from the to_process, so that it won't get processed again.
 
 4- The 2 triggers were added to the pipeline, automating the pipeline run, based on the required schedule (weekly), and on the existence of new data on the to_process folder.
 **Note**: To complete this step we need two different permissions: *AmazonS3FullAccess* and  *AWSLambdaRole*
 
-5- Create the Crawler to read the data, teh data formats, and infer schemas. 
+5- Create the Crawler to read the data, the data formats, and infer schemas. 
 
 6- Create the tables on the Data Catalog using the crawler information.
 
